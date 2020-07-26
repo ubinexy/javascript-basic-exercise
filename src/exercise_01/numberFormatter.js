@@ -8,5 +8,14 @@ export default function formatNumber(number, option) {
   // * Please implement the function and pass all the tests in format_number_spec.js.
   // * Please do NOT modify the signature of the function.
 
-  throw new Error('Please delete this line and implement the function');
+  function dollarOption() {
+    if (option === undefined) 
+      return '';
+    if (option.currency === true) 
+      return '$ ';
+    return '';
+  }
+
+  let numberFixed = (Math.round(number*100)/100).toFixed(2);
+  return `${dollarOption()}${numberFixed}`;
 }
